@@ -12,11 +12,7 @@ double findKthSortedArrays(vector<int>& nums1, vector<int>& nums2, int k) {
     return findKthSortedArrays(nums2, nums1, k);
   }
   if(n == 0) { // first we consider the condition when nums2 is empty
-    if(k == 0) {
-      result = nums1[0];
-    } else {
-      result = nums1[k-1];
-    }
+    result = nums1[k-1];
   } else if(k == 1) {
     result = nums1[0] > nums2[0] ? nums2[0] : nums1[0];
   } else if((k-1)/2 >= n) { // why use (k-1)/2 to compare, because we need to consider the start of indice is 0
