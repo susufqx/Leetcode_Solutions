@@ -7,6 +7,7 @@ double findKthSortedArrays(vector<int>& nums1, vector<int>& nums2, int k) {
   int m = nums1.size();
   int n = nums2.size();
   int comp_nums1, comp_nums2;
+  int k_nums1, k_nums2;
   /* make nums1's length is longer than nums2 to simplify the code */
   if(m < n) {
     return findKthSortedArrays(nums2, nums1, k);
@@ -15,47 +16,20 @@ double findKthSortedArrays(vector<int>& nums1, vector<int>& nums2, int k) {
     result = nums1[k-1];
   } else if(k == 1) {
     result = nums1[0] > nums2[0] ? nums2[0] : nums1[0];
-  } else if((k-1)/2 >= n) { // why use (k-1)/2 to compare, because we need to consider the start of indice is 0
-    comp_nums1 = nums1[k-n-1];
-    comp_nums2 = nums2[n-1]; // (k-1)/2 > n, so we need to choose the last element of nums2 to compare
-    if(comp_nums1 == comp_nums2) {
-      // here there are k-2 elements which are smaller then comp_nums1(comp_nums2), so ...
-      result = comp_nums1;
-    } else if (comp_nums1 > comp_nums2) {
-      // at most k-n-1+n-1=k-2 elements are smaller than comp_nums2, so delete nums2 and find the (k-n)th element
-      nums2.clear();
-      result = findKthSortedArrays(nums1, nums2, k-n);
-    } else {
-      // at most k-n-1+n-1=k-2 elements are smaller than comp_nums1, so delete the first k-n elements to find the (k-(k-n)) = nth element
-      nums1.erase(nums1.begin(), nums1.begin()+(k-n)) ;
-      result = findKthSortedArrays(nums1, nums2, n);
-    }
   } else {
-    comp_nums1 = nums1[(k-1)/2];
-    comp_nums2 = nums2[(k-1)/2];
+    k_nums2 = min(k/2, n);
+    k_nums1 = k - k_nums2;
+    comp_nums1 = nums1[k_nums1-1];
+    comp_nums2 = nums2[k_nums2-1];
+
     if(comp_nums1 == comp_nums2) {
-      // here there are k-1 elements which are smaller then comp_nums1(comp_nums2), so ...
       result = comp_nums1;
-    } else if (comp_nums1 > comp_nums2) {
-      if(k % 2 == 0) {
-        nums1.erase(nums1.begin()+((k-1)/2+1),nums1.end());
-        nums2.erase(nums2.begin(), nums2.begin()+((k-1)/2+1));
-        result = findKthSortedArrays(nums1, nums2, k-(k-1)/2-1);
-      } else {
-        nums1.erase(nums1.begin()+((k-1)/2),nums1.end());
-        nums2.erase(nums2.begin(), nums2.begin()+((k-1)/2));
-        result = findKthSortedArrays(nums1, nums2, k-(k-1)/2);
-      }
+    } else if(comp_nums1 > comp_nums2) {
+      nums2.erase(nums2.begin(), nums2.begin()+k_nums2);
+      result = findKthSortedArrays(nums1, nums2, k_nums1);
     } else {
-      if(k % 2 == 0) {
-        nums1.erase(nums1.begin(), nums1.begin()+((k-1)/2+1));
-        nums2.erase(nums2.begin()+((k-1)/2+1),nums2.end());
-        result = findKthSortedArrays(nums1, nums2, k-(k-1)/2-1);
-      } else {
-        nums1.erase(nums1.begin(), nums1.begin()+((k-1)/2));
-        nums2.erase(nums2.begin()+((k-1)/2),nums2.end());
-        result = findKthSortedArrays(nums1, nums2, k-(k-1)/2);
-      }
+      nums1.erase(nums1.begin(), nums1.begin()+k_nums1);
+      result = findKthSortedArrays(nums1, nums2, k_nums2);
     }
   }
   return result;
@@ -64,6 +38,10 @@ double findKthSortedArrays(vector<int>& nums1, vector<int>& nums2, int k) {
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
   int m = nums1.size();
   int n = nums2.size();
+  /*
+    when m+n is the even number, after using findKthSortedArrays function, original nums1 and nums2 could change,
+    so here we use other variables to store them
+  */
   vector<int> nums1Copy(nums1);
   vector<int> nums2Copy(nums2);
   double median;
@@ -79,10 +57,14 @@ int main(int argc, char ** argv) {
   //test code here
   vector<int> a;
   vector<int> b;
-  a.push_back(2);
-  b.push_back(1);
+  a.push_back(1);
+  a.push_back(4);
+  a.push_back(6);
+  a.push_back(8);
+  b.push_back(2);
   b.push_back(3);
   b.push_back(4);
+  b.push_back(5);
 
   double res = findMedianSortedArrays(a, b);
   cout<<res<<endl;
