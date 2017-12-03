@@ -9,4 +9,5 @@ The code of Leet Code Alogrithms
 ###### [20. Valid Parentheses](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q20_valid_parentheses.cpp)
 ###### [88. Merge Sorted Array](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q88_merge_sorted_array.cpp)
 ###### [203. Remove Linked List Elements](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q203_remove_linked_list_elements.cpp)
+###### [697. Degree of an Array Characters](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q697_degree_of_and_array.c)
 ###### [717. 1-bit and 2-bit Characters](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q717_1-bit_and_2-bit_characters.cpp)
