@@ -1,6 +1,8 @@
 # The anwsers of Leet Code in C/C++
 The code of Leet Code Alogrithms
 
+Some files contain the main function, but others not. Main function is just the test code, we can edit or add it ourselves.
+
 #### List of problems sovled here
 ###### [1. Two Sum](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q1_two_sum.c)
 ###### [2. Add Two Numbers](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q2_add_two_numbers.c)
