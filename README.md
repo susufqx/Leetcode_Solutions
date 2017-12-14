@@ -4,14 +4,15 @@ The code of Leet Code Alogrithms
 Some files contain the main function, but others not. Main function is just the test code, we can edit or add it ourselves.
 
 #### List of problems sovled here
-###### [1. Two Sum](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q1_two_sum.c)
-###### [2. Add Two Numbers](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q2_add_two_numbers.c)
-###### [3. Longest Substring Without Repeating Characters](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q3_longest_substring_without_repeating_characters.c)
-###### [4. Median Of Two Sorted Arrays](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q4_median_of_two_sorted_arrays.cpp)
-###### [5. Longest Palindromic Substring](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q5_longest_palindromic_substring.cpp)
-###### [7. Reverse Integer Substring](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q7_reverse_integer.cpp)
-###### [20. Valid Parentheses](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q20_valid_parentheses.cpp)
-###### [88. Merge Sorted Array](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q88_merge_sorted_array.cpp)
+###### [1. Two Sum](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q001_two_sum.c)
+###### [2. Add Two Numbers](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q002_add_two_numbers.c)
+###### [3. Longest Substring Without Repeating Characters](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q003_longest_substring_without_repeating_characters.c)
+###### [4. Median Of Two Sorted Arrays](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q004_median_of_two_sorted_arrays.cpp)
+###### [5. Longest Palindromic Substring](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q005_longest_palindromic_substring.cpp)
+###### [6. ZigZag Conversation](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q006_zigzag_conversation.cpp)
+###### [7. Reverse Integer Substring](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q007_reverse_integer.cpp)
+###### [20. Valid Parentheses](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q020_valid_parentheses.cpp)
+###### [88. Merge Sorted Array](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q088_merge_sorted_array.cpp)
 ###### [203. Remove Linked List Elements](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q203_remove_linked_list_elements.cpp)
 ###### [461. Hamming Distance I](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q461_hamming_distance_I.c)
 ###### [561. Array Partition I](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q561_array_partition_I.c)
