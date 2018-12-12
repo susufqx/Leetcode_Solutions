@@ -13,6 +13,7 @@ Some files contain the main function, but others not. Main function is just the 
 ###### [7. Reverse Integer Substring](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q007_reverse_integer.cpp)
 ###### [8. String to Integer(Atoi)](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q008_string_to_integer(atoi).cpp)
 ###### [9. Palindrome Number](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q009_palindrome_number.cpp)
+###### [10. Regular Expression Matching](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q010_regular_expression_matching.cpp)
 ###### [20. Valid Parentheses](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q020_valid_parentheses.cpp)
 ###### [88. Merge Sorted Array](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q088_merge_sorted_array.cpp)
 ###### [203. Remove Linked List Elements](https://github.com/susufqx/LeetCode_C_or_CPP/blob/master/q203_remove_linked_list_elements.cpp)
