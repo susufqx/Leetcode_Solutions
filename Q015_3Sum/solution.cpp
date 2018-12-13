@@ -17,13 +17,16 @@ public:
         for(int i=0;i<len_nums;i++){
           start = nums[0]; // 我们把每一步需要考虑的元素都安排在第一个
           nums.erase(nums.begin()); // 删除掉第一个元素
-          getTwoSum = this->twoSum(nums, start);
+          getTwoSum = this->twoSum(nums, -start);
           nums.push_back(start); // 再把之前删除的第一个元素放在最后，这样下一次的第一个元素就是当前的第二个元素，以此类推
           for(int i=0;i<getTwoSum.size();i++){
             getTwoSum[i].push_back(start);
+            sort(getTwoSum[i].begin(), getTwoSum[i].end());
             output.push_back(getTwoSum[i]);
           }
         }
+        sort(output.begin(), output.end());
+        output.erase(unique(output.begin(),output.end()), output.end());
         return output;
       }
     }
