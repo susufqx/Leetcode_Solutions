@@ -2,7 +2,7 @@
   Here we need to add -std=c++11 to complier the code
   Because we use vector initial list
  */
-#include<iostream>
+#include <iostream>
 #include <algorithm>
 #include <vector>
 

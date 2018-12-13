@@ -1,6 +1,6 @@
-#include<iostream>
-#include<map>
-#include<string>
+#include <iostream>
+#include <map>
+#include <string>
 
 using namespace std;
 
@@ -53,7 +53,7 @@ private:
     }
     return "";
   }
-private:
+
   string resRoman(int n, string s){
     string res = "";
     for(int i=0;i<n;i++){
