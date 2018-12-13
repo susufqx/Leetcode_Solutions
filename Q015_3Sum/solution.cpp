@@ -5,52 +5,59 @@ using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
-      int len_nums = nums.size();
-      vector<vector<int>> output;
-      vector<vector<int>> getTwoSum;
-      int start;
+  vector<vector<int>> threeSum(vector<int>& nums) {
+    vector<vector<int>> output;
+    int temp, start_num = 100; // start_num 只要大于0即可
+    int len_nums = nums.size();
+    int i = 0, j = len_nums-1;
 
-      if(len_nums < 3){
-        return output;
-      }else{
-        for(int i=0;i<len_nums;i++){
-          start = nums[0]; // 我们把每一步需要考虑的元素都安排在第一个
-          nums.erase(nums.begin()); // 删除掉第一个元素
-          getTwoSum = this->twoSum(nums, -start);
-          nums.push_back(start); // 再把之前删除的第一个元素放在最后，这样下一次的第一个元素就是当前的第二个元素，以此类推
-          for(int i=0;i<getTwoSum.size();i++){
-            getTwoSum[i].push_back(start);
-            sort(getTwoSum[i].begin(), getTwoSum[i].end());
-            output.push_back(getTwoSum[i]);
+    sort(nums.begin(), nums.end());
+
+    if(len_nums < 3 || nums[i] > 0 || nums[j] < 0){
+      return output;
+    }else{
+      for(i=0;i<len_nums;i++){
+        if(nums[i] > 0){
+          break;
+        }
+        if(nums[i] == start_num){
+          continue;
+        }
+        int r = i+1, l = len_nums-1;
+
+        while(r < l){
+          int sum = nums[r] + nums[l];
+          if(sum > (- nums[i])){
+            l--;
+          }else if(sum < (- nums[i])){
+            r++;
+          }else{
+            output.push_back({nums[i], nums[r], nums[l]});
+            r++;
+            l--;
           }
         }
-        sort(output.begin(), output.end());
-        output.erase(unique(output.begin(),output.end()), output.end());
-        return output;
+        start_num = nums[i];
       }
+      sort(output.begin(), output.end());
+      output.erase(unique(output.begin(),output.end()), output.end());
+      return output;
     }
-
-private:
-  vector<vector<int>> twoSum(vector<int> nums, int target) {
-    vector<vector<int>> res;
-    vector<int> temp(2);
-    int numsSize = nums.size();
-    for (int i=0;i<numsSize;i++) {
-        for(int j=i+1;j<numsSize;j++) {
-            if(nums[i] + nums[j] == target) {
-              temp[0] = nums[i];
-              temp[1] = nums[j];
-              res.push_back(temp);
-            }
-        }
-    }
-    return res;
   }
 };
 
 int main(int argc, char ** argv){
-  vector<int> v = {-1, 0, 1, 2, -1, -4};
+  vector<int> v = {-1, 0, 1, 4, 2, -3, -4, 2, 7};
   vector<vector<int>> t = Solution().threeSum(v);
+  cout<<"["<<endl;
+  for(int i=0;i<t.size();i++){
+    cout<<"["<<t[i][0]<<", "<<t[i][1]<<", "<<t[i][2]<<"]";
+    if(i == t.size()-1){
+      cout<<endl;
+    }else{
+      cout<<","<<endl;
+    }
+  }
+  cout<<"]"<<endl;
   return 0;
 }
