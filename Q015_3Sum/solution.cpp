@@ -23,18 +23,18 @@ public:
         if(nums[i] == start_num){
           continue;
         }
-        int r = i+1, l = len_nums-1;
+        int left = i+1, right = len_nums-1;
 
-        while(r < l){
-          int sum = nums[r] + nums[l];
+        while(left < right){
+          int sum = nums[left] + nums[right];
           if(sum > (- nums[i])){
-            l--;
+            right--;
           }else if(sum < (- nums[i])){
-            r++;
+            left++;
           }else{
-            output.push_back({nums[i], nums[r], nums[l]});
-            r++;
-            l--;
+            output.push_back({nums[i], nums[left], nums[right]});
+            left++;
+            right--;
           }
         }
         start_num = nums[i];

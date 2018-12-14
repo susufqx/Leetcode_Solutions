@@ -13,16 +13,16 @@ public:
 
     for(int i=0;i<nums.size();i++){
       if(i > 0 && (nums[i] == nums[i-1])) continue;
-      int r = i + 1, l = nums.size() - 1;
+      int left = i + 1, right = nums.size() - 1;
       int temp = target - nums[i];
 
-      while(r < l){ // 核心就是让 sum 和 temp 不断靠近，让 delta 的绝对值尽可能小
-        int sum = nums[r] + nums[l];
+      while(left < right){ // 核心就是让 sum 和 temp 不断靠近，让 delta 的绝对值尽可能小
+        int sum = nums[left] + nums[right];
         if(sum == temp) return target;
         if(sum > temp){
-          l--;
+          right--;
         }else if(sum < temp){
-          r++;
+          left++;
         }
         if(abs(sum - temp) < abs_delta){
           delta = sum - temp;
