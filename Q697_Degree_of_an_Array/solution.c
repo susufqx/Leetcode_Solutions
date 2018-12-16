@@ -8,22 +8,22 @@ int findShortestSubArray(int* nums, int numsSize) {
   int temp=0;
   int res = numsSize;
 
-  if(numsSize < 2) {
+  if (numsSize < 2) {
     return numsSize;
   }
-  for(i=0;i<numsSize;i++) {
-    if(array1[nums[i]] == 0) {
+  for (i = 0; i < numsSize; i++) {
+    if (array1[nums[i]] == 0) {
       array2[nums[i]] = i;
     }
     array1[nums[i]] += 1;
-    if(array1[nums[i]] > temp) {
+    if (array1[nums[i]] > temp) {
       temp = array1[nums[i]];
     }
     array3[nums[i]] = i;
   }
-  for(i=0;i<5000;i++) {
-    if(array1[i] == temp) {
-      if(res > array3[i] - array2[i] + 1) {
+  for (i = 0; i < 5000; i++) {
+    if (array1[i] == temp) {
+      if (res > array3[i] - array2[i] + 1) {
         res = array3[i] - array2[i] + 1;
       }
     }

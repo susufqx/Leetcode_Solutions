@@ -1,4 +1,4 @@
-# include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -11,13 +11,13 @@ struct ListNode {
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-      if(!head->next) return NULL; // 空链表
+      if (!head->next) return NULL; // 空链表
       ListNode * left = head, * right = head;
-      for(int i=0;i<n;i++){
+      for (int i = 0; i < n; i++) {
         right = right->next;
       }
-      if(!right) return head->next;
-      while(right->next){
+      if (!right) return head->next;
+      while(right->next) {
         left = left->next;
         right = right->next;
       }
@@ -26,7 +26,7 @@ public:
     }
 };
 
-int main(int argc, char ** argv){
+int main(int argc, char ** argv) {
 
   return 0;
 }

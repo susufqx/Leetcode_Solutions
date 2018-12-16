@@ -8,8 +8,8 @@ public:
 
     int len = moves.length();
 
-    for(int i=0;i<len;i++) {
-      switch (moves[i]){
+    for (int i = 0; i < len; i++) {
+      switch (moves[i]) {
         case 'R':
           r_num ++;
         break;
@@ -24,7 +24,7 @@ public:
         break;
       }
     }
-    if(r_num == l_num && u_num == d_num) {
+    if (r_num == l_num && u_num == d_num) {
       return true;
     } else {
       return false;

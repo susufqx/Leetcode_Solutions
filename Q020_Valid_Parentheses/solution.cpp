@@ -13,31 +13,31 @@ public:
     int len = s.length(); // get the input length
     stack <char> stk; // create a stack
 
-    for(i=0;i<len;i++) {
-      if(s[i] != ')' && s[i] != ']' && s[i] != '}') {
+    for (i = 0; i < len; i++) {
+      if (s[i] != ')' && s[i] != ']' && s[i] != '}') {
         stk.push(s[i]);
       } else {
-        if(stk.size() == 0) {
+        if (stk.size() == 0) {
           return false;
         }
         char top_char = stk.top();
         switch (s[i]) {
           case ')':
-            if(top_char == '(') {
+            if (top_char == '(') {
               stk.pop();
             } else {
               return false;
             }
             break;
           case ']':
-            if(top_char == '[') {
+            if (top_char == '[') {
               stk.pop();
             } else {
               return false;
             }
             break;
           case '}':
-            if(top_char == '{') {
+            if (top_char == '{') {
               stk.pop();
             } else {
               return false;

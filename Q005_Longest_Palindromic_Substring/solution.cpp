@@ -13,38 +13,38 @@ public:
     int res=0, left=0;
     int j;
 
-    if(s.empty()) {
+    if (s.empty()) {
       return "";
     }
-    if(s.length() == 1) {
+    if (s.length() == 1) {
       return s;
     }
-    for(int i=0;i<len;i++) {
-      if(s[i] == s[i+1]) {
+    for (int i = 0; i < len; i++) {
+      if (s[i] == s[i+1]) {
         b[k] = 2;
-        if(i>=1) {
-          for(j=i-1;j>=0;j--){
-            if(s[j] == s[2*i+1-j]) {
+        if (i>=1) {
+          for (j = i-1; j>=0; j--) {
+            if (s[j] == s[2*i+1-j]) {
               b[k] += 2;
-            }else{
+            } else{
               break;
             }
           }
         } else {
           j = -1;
         }
-        if(res < b[k]) {
+        if (res < b[k]) {
           res = b[k];
           left = j+1;
         }
       }
 
       a[k] = 1;
-      if(i>=1){
-        for(j=i-1;j>=0;j--) {
-          if(s[j] == s[2*i-j]) {
+      if (i>=1) {
+        for (j = i-1; j>=0; j--) {
+          if (s[j] == s[2*i-j]) {
             a[k] += 2;
-          }else{
+          } else{
             break;
           }
         }
@@ -52,7 +52,7 @@ public:
         j = -1;
       }
 
-      if(res < a[k]) {
+      if (res < a[k]) {
         res = a[k];
         left = j+1;
       }

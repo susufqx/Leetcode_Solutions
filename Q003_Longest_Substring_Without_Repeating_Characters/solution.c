@@ -1,12 +1,12 @@
 int lengthOfLongestSubstring(char* s) {
-    if(s == NULL) {
+    if (s == NULL) {
         return 0;
     } else {
-        int i=0, j;
+        int i = 0, j;
         int left=0, res=0;
         int c[256] = {0};
 
-        for(j=0;j<256;j++) {
+        for (j = 0; j < 256; j++) {
             c[j] = -1;
         }
 

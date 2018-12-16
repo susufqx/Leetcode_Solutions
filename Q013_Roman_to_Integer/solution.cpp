@@ -1,8 +1,8 @@
 /*
   Input number maximum is 3999
  */
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -13,7 +13,7 @@ public:
     int i = 0;
     int output = 0;
 
-    while(s[i] == 'M'){
+    while(s[i] == 'M') {
       output += 1000;
       i++;
     }
@@ -23,25 +23,25 @@ public:
     return output;
   }
 private:
-  void dealRomanLetterToInteger(string s, int& output, string symbol, int& i, int power){
-    if(s[i] == symbol[1]){
+  void dealRomanLetterToInteger(string s, int& output, string symbol, int& i, int power) {
+    if (s[i] == symbol[1]) {
       output += 5 * power;
       i++;
-      while(s[i] == symbol[2]){
+      while(s[i] == symbol[2]) {
         output +=  power;
         i++;
       }
-    }else if(s[i] == symbol[2]){
+    } else if (s[i] == symbol[2]) {
       output +=  power;
       i++;
-      if(s[i] == symbol[1]){
+      if (s[i] == symbol[1]) {
         output = output + 3 * power;
         i++;
-      }else if(s[i] == symbol[0]){
+      } else if (s[i] == symbol[0]) {
         output = output + 8 * power;
         i++;
-      }else if(s[i] == symbol[2]){
-        while(s[i] == symbol[2]){
+      } else if (s[i] == symbol[2]) {
+        while(s[i] == symbol[2]) {
           output +=  power;
           i++;
         }
@@ -51,7 +51,7 @@ private:
 };
 
 /* main function to test the code */
-int main(int argc, char ** argv){
+int main(int argc, char ** argv) {
     string input;
     cout<<"Enter the input Roman number: "<<endl;
     cin>>input;

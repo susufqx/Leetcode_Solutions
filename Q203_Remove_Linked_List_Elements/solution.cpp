@@ -11,7 +11,7 @@ struct ListNode {
 class Solution {
 public:
     ListNode * removeElements(ListNode* head, int val) {
-      if(head == NULL) {
+      if (head == NULL) {
         return head;
       }
       ListNode * l1;
@@ -23,8 +23,8 @@ public:
           l2 = l1;
           l1 = l1->next;
         }
-        if(l1->val == val) {
-          if(head->val == val) {
+        if (l1->val == val) {
+          if (head->val == val) {
             head = head->next;
           } else {
             l2->next = l1->next;
@@ -40,9 +40,9 @@ public:
       ListNode * l = (ListNode *)malloc(sizeof(ListNode));
       ListNode * head = l;
       ListNode * temp = l;
-      for(i=0;i<n;i++) {
+      for (i = 0; i < n; i++) {
         temp->val = array[i]; // or temp->val, now temp equals l
-        if(i == n-1) {
+        if (i == n-1) {
           temp->next = NULL;
         } else {
           l = (ListNode *)malloc(sizeof(ListNode)); // create the new address
@@ -54,13 +54,13 @@ public:
     }
 
     void print_list(ListNode * li) {
-      int i=0;
+      int i = 0;
       while(li) {
-        if(i % 10 == 9 && li->next != NULL) {
+        if (i % 10 == 9 && li->next != NULL) {
           printf("\n");
         }
         printf("%d", li->val);
-        if(li->next != NULL) {
+        if (li->next != NULL) {
           printf("-->");
         }
         i += 1;
@@ -80,7 +80,7 @@ int main(int argc, char ** argv) {
 
   array = new int[num];
 
-  for(i=0;i<num;i++) {
+  for (i = 0; i < num; i++) {
     array[i] = rand() % 90 + 10;
   }
 

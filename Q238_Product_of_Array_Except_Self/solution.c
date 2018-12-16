@@ -8,8 +8,8 @@
 int printArray(int * array, int num) {
     int i;
     printf("[");
-    for(i=0;i<num;i++){
-        if(i != num-1){
+    for (i = 0; i < num; i++) {
+        if (i != num-1) {
             printf("%d, ", array[i]);
         } else {
             printf("%d]\n", array[i]);
@@ -23,24 +23,24 @@ int* productExceptSelfOne(int* nums, int numsSize, int* returnSize) {
     int i;
     int * returnArray = (int *)malloc(sizeof(int) * numsSize);
 
-    for(i=0;i<numsSize;i++){
+    for (i = 0; i < numsSize; i++) {
             returnArray[i] = nums[i];
     }
-    for(i=1;i<numsSize;i++) {
+    for (i = 1; i < numsSize; i++) {
         nums[i] = nums[i-1] * nums[i];
     }
-    for(i=numsSize-1;i>0;i--) {
+    for (i = numsSize-1; i>0; i--) {
         nums[i] = nums[i-1];
     }
     nums[0] = 1;
-    for(i=numsSize-2;i>=0;i--) {
+    for (i = numsSize-2; i>=0; i--) {
         returnArray[i] = returnArray[i] * returnArray[i+1];
     }
-    for(i=0;i<numsSize-1;i++){
+    for (i = 0; i < numsSize-1; i++) {
         returnArray[i] = returnArray[i+1];
     }
     returnArray[numsSize-1] = 1;
-    for(i=0;i<numsSize;i++) {
+    for (i = 0; i < numsSize; i++) {
         returnArray[i] = returnArray[i] * nums[i];
     }  
     * returnSize = numsSize;
@@ -49,13 +49,13 @@ int* productExceptSelfOne(int* nums, int numsSize, int* returnSize) {
 
 /* method simple but the run time is longer, don't know why */
 int* productExceptSelfTwo(int* nums, int numsSize, int* returnSize) {
-    int i, back=1;
+    int i, back = 1;
     int * returnArray = (int *)malloc(sizeof(int) * numsSize);
     returnArray[0] = 1;
-    for(i=1;i<numsSize;i++){
+    for (i = 1; i < numsSize; i++) {
         returnArray[i] = returnArray[i-1] * nums[i-1];
     }
-    for(i=numsSize-1;i>=0;i--){
+    for (i = numsSize-1; i>=0; i--) {
         returnArray[i] *= back;
         back *= nums[i]; 
     } 

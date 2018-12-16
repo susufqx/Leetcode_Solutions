@@ -5,8 +5,8 @@ int partition(int * array, int low, int high) {
   int i = low - 1;
   int j, temp;
 
-  for(j=low;j<high;j++) {
-    if(array[j] < x) {
+  for (j = low; j < high; j++) {
+    if (array[j] < x) {
       i += 1;
       temp = array[i];
       array[i] = array[j];
@@ -36,8 +36,8 @@ int arrayPairSum(int* nums, int numsSize) {
     int i;
     // sort the arry first
     quickSort(nums, 0, numsSize-1);
-    for(i=0;i<numsSize;i++) {
-        if(i % 2 == 0) {
+    for (i = 0; i < numsSize; i++) {
+        if (i % 2 == 0) {
             sum += nums[i];
         }
     }

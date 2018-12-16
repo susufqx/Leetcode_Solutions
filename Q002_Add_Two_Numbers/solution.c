@@ -30,14 +30,14 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     while(l1 && l2) {
         l1->val = l1->val + l2->val + add;
         add = 0;
-        if(l1->val >= 10) {
+        if (l1->val >= 10) {
             l1->val = l1->val - 10;
             add = 1;
         }
         if (l1->next == NULL && l2->next != NULL) {
             l1->next = l2->next;
             l2->next = NULL;
-        } else if(l1->next == NULL && l2->next == NULL && add == 1) {
+        } else if (l1->next == NULL && l2->next == NULL && add == 1) {
             l1->next = high;
             add = 0;
         }
@@ -48,11 +48,11 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     while(l1) {
         l1->val = add + l1->val;
         add = 0;
-        if(l1->val >= 10) {
+        if (l1->val >= 10) {
             l1->val = l1->val -10;
             add = 1;
         }
-        if(l1->next == NULL && add == 1) {
+        if (l1->next == NULL && add == 1) {
             l1->next = high;
             add = 0;
         }

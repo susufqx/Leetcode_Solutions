@@ -6,10 +6,10 @@ public:
         int bx[32] = {0};
         int res = 0;
 
-        if(x == y) {
+        if (x == y) {
             return 0;
         }
-        if(x < y) {
+        if (x < y) {
             return hammingDistance(y, x);
         }
         while( x / 2 >= 1) {
@@ -25,8 +25,8 @@ public:
         }
         bx[j] = y % 2;
         //here j <= i, because y <= x
-        for(int k=0;k<=i;k++) {
-            if(ax[k] != bx[k]) {
+        for (int k = 0; k < =i; k++) {
+            if (ax[k] != bx[k]) {
                 res += 1;
             }
         }
