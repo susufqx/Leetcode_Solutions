@@ -27,3 +27,15 @@ public:
       return dummy->next;
     }
 };
+
+// 别人的递归写法，作参考学习
+// class Solution {
+// public:
+//     ListNode* swapPairs(ListNode* head) {
+//         if (!head || !head->next) return head;
+//         ListNode *t = head->next;
+//         head->next = swapPairs(head->next->next);
+//         t->next = head;
+//         return t;
+//     }
+// };
