@@ -28,6 +28,7 @@ Some files contain the ```main``` function, but others not. ```Main``` function 
 ##### [22. Generate Parentheses Lists](https://github.com/susufqx/Leetcode_Solutions/tree/master/Q022_Generate_Parentheses)
 ##### [23. Merge k Sorted Lists](https://github.com/susufqx/Leetcode_Solutions/tree/master/Q023_Meger_k_Sorted_Lists)
 ##### [24. Swap Nodes in Pairs](https://github.com/susufqx/Leetcode_Solutions/tree/master/Q024_Swap_Nodes_in_Pairs)
+##### [25. Reverse Nodes in Pairs](https://github.com/susufqx/Leetcode_Solutions/tree/master/Q025_Reverse_Nodes_in_k-Groups)
 ##### [88. Merge Sorted Array](https://github.com/susufqx/leetcode/tree/master/Q088_Merge_Sorted_Array)
 ##### [203. Remove Linked List Elements](https://github.com/susufqx/leetcode/tree/master/Q203_Remove_Linked_List_Elements)
 ##### [238. Product of Array Except Self](https://github.com/susufqx/leetcode/tree/master/Q238_Product_of_Array_Except_Self)

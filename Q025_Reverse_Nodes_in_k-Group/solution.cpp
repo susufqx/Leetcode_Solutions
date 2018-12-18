@@ -14,6 +14,18 @@ using namespace std;
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-      
+
+    }
+
+    ListNode* reverseOneGroup(ListNode* pre, ListNode* next) {
+      ListNode* last = pre->next;
+      ListNode* cur = last->next;
+      while (cur != next) {
+        last->next = cur->next;
+        cur->next = pre->next;
+        pre->next = cur;
+        cur = last->next;
+      }
+      return last;
     }
 };
