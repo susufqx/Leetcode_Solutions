@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int lengthOfLongestSubstring(char* s) {
     if (s == NULL) {
         return 0;
