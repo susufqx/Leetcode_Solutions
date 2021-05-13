@@ -10,12 +10,24 @@ func insert(intervals [][]int, newInterval []int) [][]int {
 
 	quickSort(a, 0, len(a)-1)
 	res := [][]int{}
+	left, right := 0, 0
 	for i, v := range a {
-		if i%2 == 0 {
-			if newInterval == v {
-
+		if newInterval[0] == v {
+			if i%2 != 0 {
+				newInterval[0] = a[i-1]
+				left = i - 1
+			} else {
+				left = i
 			}
-		} else {
+		}
+
+		if newInterval[1] == v {
+			if i%2 == 0 {
+				newInterval[1] = a[i+1]
+				right = i + 1
+			} else {
+				right = i
+			}
 
 		}
 	}
