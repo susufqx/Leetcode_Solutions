@@ -1,7 +1,6 @@
 package main
 
 func insert(intervals [][]int, newInterval []int) [][]int {
-	// return merge(append(intervals, newInterval))
 	a := []int{}
 	a = append(a, newInterval...)
 	for _, interval := range intervals {
@@ -10,28 +9,34 @@ func insert(intervals [][]int, newInterval []int) [][]int {
 
 	quickSort(a, 0, len(a)-1)
 	res := [][]int{}
-	left, right := 0, 0
 	for i, v := range a {
 		if newInterval[0] == v {
 			if i%2 != 0 {
 				newInterval[0] = a[i-1]
-				left = i - 1
-			} else {
-				left = i
 			}
 		}
 
 		if newInterval[1] == v {
 			if i%2 == 0 {
 				newInterval[1] = a[i+1]
-				right = i + 1
-			} else {
-				right = i
 			}
 
 		}
 	}
 
+	i := 0
+	add := true
+	for i < len(a)-1 {
+		if a[i] == newInterval[0] && add {
+			res = append(res, newInterval)
+			add = false
+		} else if a[i] < newInterval[0] || a[i] > newInterval[1] {
+			res = append(res, []int{a[i], a[i+1]})
+		}
+		i = i + 2
+	}
+
+	return res
 }
 
 func quickSort(nums []int, left, right int) {
